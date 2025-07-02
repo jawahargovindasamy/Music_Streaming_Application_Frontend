@@ -20,8 +20,9 @@ const App = () => {
   const location = useLocation();
 
   const hideLayout =
-    ["/login", "/register", "/forgot-password","/404"].includes(location.pathname) ||
-    location.pathname.startsWith("/reset-password");
+    ["/login", "/register", "/forgot-password", "/404"].includes(
+      location.pathname
+    ) || location.pathname.startsWith("/reset-password");
 
   useEffect(() => {
     if (user?.token) {
@@ -44,42 +45,36 @@ const App = () => {
     <div className="h-screen bg-black relative">
       <ToastContainer position="bottom-right" />
 
-      {songsData.length === 0 ? (
-        <div className="flex justify-center items-center h-full text-white">
-          Loading music...
-        </div>
-      ) : (
-        <>
-          {/* Routes */}
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route
-              path="/reset-password/:id/:token"
-              element={<ResetPassword />}
-            />
+      <>
+        {/* Routes */}
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="/reset-password/:id/:token"
+            element={<ResetPassword />}
+          />
 
-            <Route
-              path="/*"
-              element={
-                <div className="h-[80%] flex">
-                  <Sidebar
-                    isSidebarOpen={isSidebarOpen}
-                    setIsSidebarOpen={setIsSidebarOpen}
-                  />
-                  <Display setIsSidebarOpen={setIsSidebarOpen} />
-                </div>
-              }
-            />
+          <Route
+            path="/*"
+            element={
+              <div className="h-[80%] flex">
+                <Sidebar
+                  isSidebarOpen={isSidebarOpen}
+                  setIsSidebarOpen={setIsSidebarOpen}
+                />
+                <Display setIsSidebarOpen={setIsSidebarOpen} />
+              </div>
+            }
+          />
 
-            <Route path="/404" element={<NotFound />} />
-          </Routes>
+          <Route path="/404" element={<NotFound />} />
+        </Routes>
 
-          {/* Player */}
-          {!hideLayout && <Player />}
-        </>
-      )}
+        {/* Player */}
+        {!hideLayout && <Player />}
+      </>
 
       {track?.audio && (
         <audio
