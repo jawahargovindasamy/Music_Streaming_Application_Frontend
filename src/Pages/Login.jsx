@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 import { AuthContext } from "../Context/AuthContext.jsx";
 import { PlayerContext } from "../Context/PlayerContext.jsx";
+import logo from "../assests/Sonique.png"
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -72,7 +73,7 @@ const Login = () => {
       {/* Login Card */}
       <div className="relative z-10 w-full max-w-md bg-white/10 border border-purple-500/30 backdrop-blur-lg text-white rounded-2xl shadow-2xl p-8 space-y-6">
         <div className="flex items-center justify-center gap-3 ">
-          <img src="../../public/Sonique.png" alt="" className="w-10 h-10 rounded-2xl"/>
+          <img src={logo} alt="" className="w-10 h-10 rounded-2xl"/>
           <h2 className="text-3xl font-extrabold text-center">Sonique Login</h2>
         </div>
         <p className="text-center text-sm text-gray-300">

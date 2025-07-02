@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css"; // Corrected import path for toa
 import axios from "axios";
 import { FaEye, FaEyeSlash, FaHome } from "react-icons/fa";
 import { PlayerContext } from "../Context/PlayerContext";
+import logo from "../assests/Sonique.png"
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const ResetPassword = () => {
       <div className="relative z-10 w-full max-w-md bg-white/10 border border-purple-500/30 backdrop-blur-lg text-white rounded-2xl shadow-2xl p-8 space-y-6">
         <div className="flex items-center justify-center gap-3">
           <img
-            src="../../public/Sonique.png"
+            src={logo}
             alt=""
             className="W-10 h-10 rounded-2xl"
           />

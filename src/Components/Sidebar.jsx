@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 
 import { PlayerContext } from "../Context/PlayerContext";
+import logo from "../assests/Sonique.png"
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -87,7 +88,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <div className="flex items-center justify-between p-4 lg:p-6 border-b border-zinc-800">
           <div className="flex items-center gap-3">
             <img
-              src="../../public/Sonique.png"
+              src={logo}
               alt="logo"
               className="w-8 h-8"
             />
